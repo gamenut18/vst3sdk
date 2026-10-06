@@ -1,21 +1,33 @@
+# Patchyco fork: Steinberg's own .gitmodules uses relative URLs
+# (../vst3_base etc.), which resolve against whichever repo this was cloned
+# from — from this fork that is github.com/gamenut18/vst3_base, which does
+# not exist. These point straight at Steinberg's repos instead.
+#
+# Patchyco's VST engine only builds the SDK's hosting-side libraries (base,
+# cmake, pluginterfaces, public.sdk). doc, tutorials and vstgui4 are marked
+# update = none so a recursive clone/update skips them; fetch one anyway with
+# `git submodule update --init --checkout <path>`.
 [submodule "base"]
 	path = base
-	url = ../vst3_base
+	url = https://github.com/steinbergmedia/vst3_base.git
 [submodule "cmake"]
 	path = cmake
-	url = ../vst3_cmake
+	url = https://github.com/steinbergmedia/vst3_cmake.git
 [submodule "doc"]
 	path = doc
-	url = ../vst3_doc
+	url = https://github.com/steinbergmedia/vst3_doc.git
+	update = none
 [submodule "pluginterfaces"]
 	path = pluginterfaces
-	url = ../vst3_pluginterfaces
+	url = https://github.com/steinbergmedia/vst3_pluginterfaces.git
 [submodule "public.sdk"]
 	path = public.sdk
-	url = ../vst3_public_sdk
+	url = https://github.com/steinbergmedia/vst3_public_sdk.git
 [submodule "tutorials"]
 	path = tutorials
-	url = ../vst3_tutorials
+	url = https://github.com/steinbergmedia/vst3_tutorials.git
+	update = none
 [submodule "vstgui4"]
 	path = vstgui4
-	url = ../vstgui
+	url = https://github.com/steinbergmedia/vstgui.git
+	update = none
